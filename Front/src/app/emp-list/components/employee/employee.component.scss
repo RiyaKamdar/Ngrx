@@ -1,0 +1,31 @@
+$background-color_1: silver;
+
+table {
+	width: 100%;
+	.mat-column-id {
+		width: 32px;
+		// border-right: 1px solid currentColor;
+		padding-right:90px;
+		text-align: center;
+	}
+	.mat-column-employee_name {
+		padding-left: 90px;
+		// padding-right: 20px;
+	}
+	.mat-column-employee_salary {
+		padding-left: 90px;
+	}
+	.mat-column-employee_age {
+		padding-left: 90px;
+	}
+	.mat-column-contact {
+		padding-left: 90px;
+	}
+	tr {
+		&:not(.head) {
+			&:nth-child(odd) {
+				background-color: $background-color_1;
+			}
+		}
+	}
+}

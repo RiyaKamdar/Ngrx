@@ -1,0 +1,19 @@
+$background-color_1: white;
+
+.spacer {
+	flex: 1 1 auto;
+}
+
+.button {
+	text-decoration: none;
+}
+
+div {
+	background-color: $background-color_1;
+	.search {
+		margin-left: 45px;
+		.icon{
+			color: #3A4F7A;
+		}
+	}
+}

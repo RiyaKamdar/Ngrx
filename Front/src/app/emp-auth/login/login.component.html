@@ -1,0 +1,37 @@
+<mat-card class="card">
+    <mat-card-content>
+        <div class="header">
+            <h2 class="lab">Login</h2>
+        </div>
+        <form name="loginForm" [formGroup] = "loginForm">
+            <mat-card-content> 
+            <div class="email-input">        
+                <mat-form-field  class="full-width" >
+                    <label class="lab">Email</label><br>
+                    <input matInput formControlName = "email" type="text" class="input">
+                    <mat-error *ngIf="email.errors?.['required']">
+                        Please enter the email
+                    </mat-error>
+                    <mat-error *ngIf="email.errors?.['pattern']">
+                        Enter valid email
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="full-width">
+                    <label class="lab">Password</label><br>
+                    <input matInput formControlName = "password" [type]="hide ? 'password' : 'text'" class="input">
+                    <mat-icon mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'" [attr.aria-pressed]="hide">{{ hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="passw.errors?.['required']">
+                        Please enter the password
+                    </mat-error>
+                    <mat-error *ngIf="passw.errors?.['minlength']">Password must be at least 6 characters long.</mat-error>
+                </mat-form-field>
+                
+            </div>
+            <mat-error *ngIf="invalid">Incorrect Credentials</mat-error>
+        </mat-card-content> 
+            <a href="/emplist" class="href"><button mat-flat-button color="primary" (click)="onLogin()">Login</button></a>
+        </form>
+    </mat-card-content>
+</mat-card>
